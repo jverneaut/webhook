@@ -12,7 +12,7 @@ app.get('/:projectName', (req, res) => {
     name === projectName
   );
   if (project.length) {
-    const { file } = find[0];
+    const { file } = project[0];
     exec(file,
       (error, stdout, stderr) => {
         console.log(`${stdout}`);
