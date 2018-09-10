@@ -5,15 +5,15 @@ const config = require('./config.json');
 
 const app = express();
 
-app.get('/:project', (req, res) => {
-  const { project } = req.params;
+app.get('/:projectName', (req, res) => {
+  const { projectName } = req.params;
   const { projects } = config;
-  const find = projects.filter(({ name }) =>
-    name === project
+  const project = projects.filter(({ name }) =>
+    name === projectName
   );
-  if (find.length) {
-    const file = `${find[0].directory}/install.sh`;
-    var yourscript = exec(file,
+  if (project.length) {
+    const { file } = find[0];
+    exec(file,
       (error, stdout, stderr) => {
         console.log(`${stdout}`);
         console.log(`${stderr}`);
