@@ -5,7 +5,7 @@ const config = require('./config.json');
 
 const app = express();
 
-app.get('/:projectName', (req, res) => {
+app.post('/:projectName', (req, res) => {
   const { projectName } = req.params;
   const { projects } = config;
   const project = projects.filter(({ name }) =>
