@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "sample-api",
-      "file": "/Users/julienverneaut/Desktop/sample-api/install.sh"
+      "file": "/root/sample-api/install.sh"
     }
   ]
 }
